@@ -1,5 +1,5 @@
 const Users = require("../dao/users.dao.js");
-const GenericRepository = require("./genericRepository.js");
+const GenericRepository = require("./GenericRepository.js");
 
 class UserRepository extends GenericRepository {
     constructor(dao) {

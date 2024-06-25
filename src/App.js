@@ -53,7 +53,7 @@ const PUERTO = process.env.PORT;
 // Multer
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        let folder = './public/';
+        let folder = './src/public/';
         if (file.mimetype.startsWith('image/')) {
             if (file.fieldname === 'profile') {
                 folder += 'img/profiles';
@@ -77,8 +77,8 @@ module.exports = upload;
 
 
 // Express
-app.use('/api/carts', express.static('/public'));
-app.use(express.static("/public"));
+app.use('/api/carts', express.static('./src/public'));
+app.use(express.static("./src/public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

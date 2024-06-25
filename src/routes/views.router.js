@@ -36,7 +36,7 @@ const isUser = (req, res, next) => {
 router.get("/", async (req, res) => {
     try {
         const cartId = req.session.cartId;
-        res.render("index", { loggedIn: res.locals.loggedIn, isAdmin: res.locals.isAdmin, cartId: cartId, });
+        res.render("index.handlebars", { loggedIn: res.locals.loggedIn, isAdmin: res.locals.isAdmin, cartId: cartId, });
     } catch (error) {
         req.logger.error('Error al cargar la ruta raiz:', error);
         res.status(500).send('Error interno del servidor');

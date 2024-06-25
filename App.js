@@ -10,18 +10,18 @@ const MongoStore = require("connect-mongo");
 const cookieParser = require("cookie-parser");
 const FileStore = require("session-file-store");
 const socket = require("socket.io");
-const ProductManager = require("./controller/productManager.js");
-const initializePassport = require("./config/passport.config.js");
-const productsRouter = require("./routes/products.router.js");
-const cartsRouter = require("./routes/carts.router.js");
-const MessageModel = require("./dao/models/messages.model.js");
-const mockingProductsRouter = require("./routes/mock.router.js");
-const viewsRouter = require("./routes/views.router.js");
-const userRouter = require("./routes/user.router.js");
-const uploadRoutes = require("./routes/multer.router.js");
-const sessionRouter = require("./routes/session.router.js");
-const addLogger =  require("./utils/logger.js")
-const { mongo_url } = require('./config/config.js');
+const ProductManager = require("./src/controller/productManager.js");
+const initializePassport = require("./src/config/passport.config.js");
+const productsRouter = require("./src/routes/products.router.js");
+const cartsRouter = require("./src/routes/carts.router.js");
+const MessageModel = require("./src/dao/models/messages.model.js");
+const mockingProductsRouter = require("./src/routes/mock.router.js");
+const viewsRouter = require("./src/routes/views.router.js");
+const userRouter = require("./src/routes/user.router.js");
+const uploadRoutes = require("./src/routes/multer.router.js");
+const sessionRouter = require("./src/routes/session.router.js");
+const addLogger =  require("./src/utils/logger.js")
+const { mongo_url } = require('./src/config/config.js');
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUiExpress = require("swagger-ui-express");
 
@@ -45,7 +45,7 @@ const isPremiumUser = (req, res, next) => {
     next();
 };
 
-require("./database.js");
+require("./src/database.js");
 
 const app = express();
 const PUERTO = process.env.PORT;

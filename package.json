@@ -7,7 +7,7 @@
     "test": "mocha 'test/supertest.test.mjs'",
     "dev": "nodemon src/app.js --mode desarrollo",
     "production": "nodemon src/app.js --mode produccion",
-    "start": "nodemon src/app.js --mode produccion"
+    "start": "node"
   },
   "author": "",
   "license": "ISC",

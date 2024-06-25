@@ -2,7 +2,7 @@
   "name": "proyectoFinal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "mocha 'test/supertest.test.mjs'",
     "dev": "nodemon src/app.js --mode desarrollo",

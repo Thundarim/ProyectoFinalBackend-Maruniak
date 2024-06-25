@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión</title>
+  <title>VirtualExplain</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
 <body>
@@ -14,7 +14,11 @@
       <div class="card">
         <div class="card-body text-center">
           <h1 class="mb-4">Bienvenido</h1>
-          <p>Por favor haz clic en <a href="/login">aquí</a> para iniciar sesión.</p>
+          {{#if loggedIn}}
+            <p>Mira tu Perfil <a href="/profile">Aqui.</a> </p>
+          {{else}}
+            <p>Por favor haz click <a href="/login">Aqui</a> para iniciar sesion.</p>
+          {{/if}}
         </div>
       </div>
     </div>

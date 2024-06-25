@@ -48,7 +48,7 @@ const isPremiumUser = (req, res, next) => {
 require("./database.js");
 
 const app = express();
-const PUERTO = 8080;
+const PUERTO = process.env.PORT;
 
 // Multer
 const storage = multer.diskStorage({

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha 'test/supertest.test.mjs'",
     "dev": "nodemon src/app.js --mode desarrollo",
-    "produccion": "nodemon src/app.js --mode produccion",
+    "production": "nodemon src/app.js --mode produccion",
     "start": "node"
   },
   "author": "",

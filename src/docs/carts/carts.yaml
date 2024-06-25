@@ -1,0 +1,71 @@
+paths:
+  /api/carts:
+    get:
+      tags:
+        - "Carritos"
+      summary: "Obtener todos los carritos"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Operación exitosa"
+    post:
+      tags:
+        - "Carritos"
+      summary: "Crear un nuevo carrito"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Objeto de carrito que se necesita agregar a la tienda"
+          required: true
+          schema:
+            $ref: "#/definitions/Cart"
+      responses:
+        200:
+          description: "Operación exitosa"
+  /api/carts/{cartId}:
+    get:
+      tags:
+        - "Carritos"
+      summary: "Obtener un carrito por ID"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "cartId"
+          in: "path"
+          description: "ID del carrito a devolver"
+          required: true
+          type: "string"
+      responses:
+        200:
+          description: "Operación exitosa"
+          schema:
+            $ref: "#/definitions/Cart"
+definitions:
+  Cart:
+    type: "object"
+    properties:
+      products:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            product:
+              type: "object"
+              properties:
+                _id:
+                  type: "string"
+                title:
+                  type: "string"
+                price:
+                  type: "number"
+                stock:
+                  type: "number"
+            quantity:
+              type: "number"
+    required:
+      - "products"

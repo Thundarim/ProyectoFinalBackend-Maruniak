@@ -1,0 +1,80 @@
+paths:
+  /api/products:
+    get:
+      tags:
+        - "Productos"
+      summary: "Obtener todos los productos"
+      responses:
+        '200':
+          description: "Una lista de productos"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+    post:
+      tags:
+        - "Productos"
+      summary: "Crear un nuevo producto"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses:
+        '201':
+          description: "El producto creado"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        title:
+          type: string
+          description: "El título del producto"
+        description:
+          type: string
+          description: "La descripción del producto"
+        img:
+          type: string
+          description: "La URL de la imagen del producto"
+        price:
+          type: number
+          format: float
+          description: "El precio del producto"
+        thumbnail:
+          type: string
+          description: "La URL de la miniatura del producto"
+        code:
+          type: string
+          description: "El código único del producto"
+        stock:
+          type: integer
+          description: "La cantidad de stock del producto"
+        status:
+          type: boolean
+          description: "El estado del producto (activo/inactivo)"
+        category:
+          type: string
+          description: "La categoría del producto"
+        owner:
+          type: string
+          description: "El propietario del producto"
+      required:
+        - title
+        - description
+        - price
+        - code
+        - stock
+        - status
+        - category
+        - owner
+tags:
+  - name: "Productos"
+    description: "Operaciones relacionadas con productos"

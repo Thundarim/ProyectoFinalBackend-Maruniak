@@ -96,7 +96,7 @@ app.use(session({
 // handlebars
 app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
-app.set('views, __dirname + ./views');
+app.set("views", "/views");
 app.use(isLoggedIn);
 app.use(isAdmin);
 app.use(isPremiumUser);
